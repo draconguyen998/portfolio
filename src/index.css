@@ -1,3 +1,100 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Cube Container */
+.cube {
+  position: absolute;
+  width: 36px; /* Kích thước nhỏ */
+  height: 36px;
+  transform-style: preserve-3d;
+  animation: spin 2s linear infinite; /* Xoay liên tục */
+  pointer-events: none; /* Không chặn các thao tác chuột */
+  z-index: 1; /* Cube nằm phía trên nhưng không ảnh hưởng */
+}
+
+/* Cube Faces */
+.face {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background-color: lime;
+  border: 2px solid black;
+  opacity: 0.9;
+}
+
+/* Front Face */
+.face.front {
+  transform: translateZ(18px); /* Nửa chiều rộng */
+}
+
+/* Back Face */
+.face.back {
+  transform: rotateY(180deg) translateZ(18px);
+}
+
+/* Left Face */
+.face.left {
+  transform: rotateY(-90deg) translateZ(18px);
+}
+
+/* Right Face */
+.face.right {
+  transform: rotateY(90deg) translateZ(18px);
+}
+
+/* Top Face */
+.face.top {
+  transform: rotateX(90deg) translateZ(18px);
+}
+
+/* Bottom Face */
+.face.bottom {
+  transform: rotateX(-90deg) translateZ(18px);
+}
+
+/* Rotation Animation */
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+
+/* Marquee Container */
+.marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Ẩn nội dung ngoài vùng nhìn */
+    background-color: black; /* Nền tối */
+    height: 50px; /* Chiều cao marquee */
+  }
+  
+  /* Marquee Content */
+  .marquee-content {
+    display: flex;
+    white-space: nowrap; /* Không xuống dòng */
+    animation: marquee 20s linear infinite; /* Animation liền mạch */
+  }
+  
+  /* Marquee Items */
+  .marquee-item {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 16px;
+    color: lime;
+    opacity: 0.8;
+  }
+  
+  /* Animation cho Marquee */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0); /* Bắt đầu từ đầu */
+    }
+    100% {
+      transform: translateX(-50%); /* Dịch chuyển nửa chiều dài nội dung */
+    }
+  }
