@@ -5,12 +5,11 @@
 /* Cube Container */
 .cube {
   position: absolute;
-  width: 36px; /* Kích thước nhỏ */
+  width: 36px;
   height: 36px;
   transform-style: preserve-3d;
-  animation: spin 2s linear infinite; /* Xoay liên tục */
-  pointer-events: none; /* Không chặn các thao tác chuột */
-  z-index: 1; /* Cube nằm phía trên nhưng không ảnh hưởng */
+  animation: spin 2s linear infinite;
+  pointer-events: none; /* Không can thiệp vào sự kiện chuột */
 }
 
 /* Cube Faces */
@@ -18,14 +17,14 @@
   position: absolute;
   width: 36px;
   height: 36px;
-  background-color: lime;
-  border: 2px solid black;
+  background-color: #0047ab;
+  border: 2px solid #000012;
   opacity: 0.9;
 }
 
 /* Front Face */
 .face.front {
-  transform: translateZ(18px); /* Nửa chiều rộng */
+  transform: translateZ(18px);
 }
 
 /* Back Face */
@@ -69,7 +68,7 @@
     position: relative;
     width: 100%;
     overflow: hidden; /* Ẩn nội dung ngoài vùng nhìn */
-    background-color: black; /* Nền tối */
+    background-color: #000012; /* Nền tối */
     height: 50px; /* Chiều cao marquee */
   }
   
@@ -85,7 +84,8 @@
     display: inline-block;
     margin-right: 30px;
     font-size: 16px;
-    color: lime;
+    font-weight: 500;
+    color: #4D7EC4;
     opacity: 0.8;
   }
   

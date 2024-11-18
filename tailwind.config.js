@@ -6,6 +6,8 @@ export default {
       colors: {
         primary: "#0047AB", // Thêm màu primary
         primary_dark: "#002E91", //Thêm màu primary_dark
+        primary_light: "#4D7EC4", //Thêm màu primary_light
+        bg_primary: "#000012", //Thêm màu bg_primary
       },
     },
     screens: {

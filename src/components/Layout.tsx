@@ -5,11 +5,10 @@ import Cube from "./Cube";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="relative">
+    <div className="bg-bg_primary">
       <Header />
-      <main className="relative z-10 pt-20">{children}</main>
+      <main className="relative z-">{children}</main> {/* Nội dung luôn trên cube */}
       <Footer />
-      {/* Cube luôn hiển thị */}
       <Cube />
     </div>
   );

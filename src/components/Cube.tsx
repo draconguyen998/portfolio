@@ -3,15 +3,15 @@ import React, { useState, useEffect } from "react";
 const Cube = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  // Lắng nghe sự kiện chuột để di chuyển cube
+  // Xử lý sự kiện chuột
   const handleMouseMove = (event: MouseEvent) => {
     setPosition({
-      x: event.clientX,
-      y: event.clientY,
+      x: event.clientX + 20, // Thêm khoảng cách ngang
+      y: event.clientY + 20, // Thêm khoảng cách dọc
     });
   };
 
-  // Gắn sự kiện toàn trang
+  // Gắn sự kiện chuột toàn trang
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
@@ -21,7 +21,7 @@ const Cube = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-full h-full pointer-events-none"
+      className="fixed top-0 left-0 w-full h-full pointer-events-none z-10"
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
       }}
