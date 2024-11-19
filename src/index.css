@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Lato", sans-serif;
+}
+
+section {
+  margin-bottom: 160px; /* Cách Footer 160px */
+}
+
 /* Cube Container */
 .cube {
   position: absolute;
@@ -62,42 +70,68 @@
   }
 }
 
-
-/* Marquee Container */
+/* Container chính */
 .marquee-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden; /* Ẩn nội dung ngoài vùng nhìn */
-    background-color: #000012; /* Nền tối */
-    height: 50px; /* Chiều cao marquee */
+  overflow: hidden; /* Ẩn nội dung vượt ngoài */
+  position: relative;
+  width: 100%;
+  height: 40px; /* Chiều cao marquee */
+  /* background-color: #000; */
+  display: flex;
+  align-items: center;
+}
+
+/* Track chạy nội dung */
+.marquee-track {
+  display: flex;
+  animation: marquee 20s linear infinite; /* Animation mượt */
+  white-space: nowrap; /* Không xuống dòng */
+  position: relative;
+}
+
+/* Nội dung marquee */
+.marquee-track span {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4D7EC4; /* Màu chữ */
+}
+
+/* Animation marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  
-  /* Marquee Content */
-  .marquee-content {
-    display: flex;
-    white-space: nowrap; /* Không xuống dòng */
-    animation: marquee 20s linear infinite; /* Animation liền mạch */
+  to {
+    transform: translateX(-50%);
   }
-  
-  /* Marquee Items */
-  .marquee-item {
-    display: inline-block;
-    margin-right: 30px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #4D7EC4;
-    opacity: 0.8;
-  }
-  
-  /* Animation cho Marquee */
-  @keyframes marquee {
-    0% {
-      transform: translateX(0); /* Bắt đầu từ đầu */
-    }
-    100% {
-      transform: translateX(-50%); /* Dịch chuyển nửa chiều dài nội dung */
-    }
-  }
+}
+
+/* Hiệu ứng mờ hai bên */
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10%; /* Phần mờ chiếm 10% chiều ngang */
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; /* Để không chặn tương tác */
+}
+
+/* Gradient phía bên trái */
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #000, transparent);
+}
+
+/* Gradient phía bên phải */
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #000, transparent);
+}
+
 
 /* Container của Cube */
 .rotatingcube-container {
@@ -115,13 +149,13 @@
   width: 400px; /* Kích thước chiều rộng của Cube */
   height: 400px; /* Kích thước chiều cao của Cube */
   transform-style: preserve-3d;
-  animation: rotateY 10s linear infinite; /* Xoay ngang và chậm hơn */
+  animation: rotateY 12s linear infinite; /* Xoay ngang và chậm hơn */
 }
 
 /* Container của Cube */
 .rotatingcube-container {
   position: absolute; /* Đặt vị trí tuyệt đối để đè lên chữ */
-  top: 90%; /* Dịch Cube xuống dưới một chút */
+  top: 80%; /* Dịch Cube xuống dưới một chút */
   left: 50%;
   transform: translate(-50%, -50%); /* Căn giữa Cube */
   perspective: 1000px; /* Hiệu ứng 3D */
@@ -134,7 +168,7 @@
   width: 400px; /* Kích thước chiều rộng của Cube */
   height: 400px; /* Kích thước chiều cao của Cube */
   transform-style: preserve-3d;
-  animation: rotateY 10s linear infinite; /* Xoay ngang và chậm hơn */
+  animation: rotateY 12s linear infinite; /* Xoay ngang và chậm hơn */
 }
 
 /* Các mặt của Cube */
@@ -180,3 +214,48 @@
   }
 }
 
+
+.text-content p {
+  font-size: 18px; /* Kích thước font */
+  line-height: 1.6; /* Khoảng cách giữa các dòng */
+  max-width: 400px; /* Chiều rộng tối đa của văn bản */
+  text-align: left; /* Căn lề trái */
+  color: #ffffff; /* Màu chữ */
+  overflow: hidden; /* Ẩn các nội dung vượt quá */
+  display: -webkit-box; /* Hiển thị theo khối */
+  -webkit-line-clamp: 5; /* Hiển thị tối đa 5 dòng */
+  -webkit-box-orient: vertical; /* Định hướng khối */
+}
+
+
+
+/* Container chính */
+.content-container {
+  display: flex;
+  justify-content: space-between; /* Cách đều hai bên */
+  align-items: flex-start; /* Căn chỉnh theo hàng trên */
+  margin-top: 20px; /* Khoảng cách phía trên */
+  position: relative;
+}
+
+/* Văn bản bên trái */
+.left-text {
+  width: 33%; /* Chiếm 1/3 chiều rộng */
+  text-align: left; /* Căn trái */
+  font-size: 18px; /* Kích thước chữ */
+  line-height: 1.6; /* Khoảng cách dòng */
+  color: #ffffff; /* Màu chữ */
+}
+
+/* Văn bản bên phải */
+.right-text {
+  width: 33%; /* Chiếm 1/3 chiều rộng */
+  text-align: right; /* Căn phải */
+  font-size: 18px; /* Kích thước chữ */
+  line-height: 1.6; /* Khoảng cách dòng */
+  color: #ffffff; /* Màu chữ */
+  position: absolute;
+  right: 0; /* Căn sát phải */
+  /* top: 50px; Tùy chỉnh để đặt vị trí cho khớp dấu đỏ */
+  margin-right: 24px;
+}

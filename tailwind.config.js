@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        lato: ["Lato", "sans-serif"], // Định nghĩa font Lato
+      },
       colors: {
         primary: "#0047AB", // Thêm màu primary
         primary_dark: "#002E91", //Thêm màu primary_dark
