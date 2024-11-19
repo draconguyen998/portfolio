@@ -67,12 +67,12 @@ const Home = () => {
         </div> */}
         <Marquee />
       </section>
-     {/* Section 1: DESIGN*DRAFLY */}
-     <section className="text-center relative py-16">
-        <h1 className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[12.5vw] font-bold text-white text-opacity-70 z-0">
+      {/* Section 1: DESIGN*DRAFLY */}
+      <section className="text-center relative py-12">
+        <h1 className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[12.5vw] font-bold text-white text-opacity-90 z-0">
           DESIGN*DRAFLY
         </h1>
-        
+
         {/* Khối Cube nằm dưới chữ DESIGN*DRAFLY */}
         <div className="w-full flex justify-center pt-16">
           <RotatingCube />
@@ -80,23 +80,38 @@ const Home = () => {
       </section>
 
       {/* Section 2: Nội dung văn bản */}
-      <section className="content-container max-w-screen-xl mx-auto px-6 pb-40">
+      <section className="content-container max-w-screen-xl mx-auto px-6 pb-5">
         {/* Đoạn văn bản bên trái */}
         {/* <div className="text-content max-w-screen-md mx-auto px-6"> */}
         <div className="flex items-start justify-between">
-        <div className="left-text w-1/2 text-left">
-          <p>
-            At DesignCube, we specialize in web design, SEO, UI/UX, branding, and digital marketing. Elevate your brand and transform your digital presence with our innovative design solutions.
-          </p>
+          <div className="left-text w-1/2 text-left">
+            <p>
+              At DesignCube, we specialize in web design, SEO, UI/UX, branding,
+              and digital marketing. Elevate your brand and transform your
+              digital presence with our innovative design solutions.
+            </p>
+          </div>
+
+          {/* Đoạn văn bản bên phải */}
+          <div className="right-text w-1/2 text-right">
+            <p>
+              *ESTABLISHED — 2024
+              <br />
+              BUCHAREST, ROMANIA
+            </p>
+          </div>
         </div>
-          
-        {/* Đoạn văn bản bên phải */}
-        <div className="right-text w-1/2 text-right">
-          <p>
-            *ESTABLISHED — 2024<br />
-            BUCHAREST, ROMANIA
-          </p>
-        </div>
+      </section>
+      <section className="about-section pb-5">
+        <div className="about-container">
+          <h1 className="about-heading text-[15vw] font-bold text-white text-opacity-90">
+            ABOUT*US
+          </h1>
+          <div className="scroll-indicator">
+            <div className="scroll-line"></div>
+            <div className="scroll-dot"></div>
+            <div className="scroll-line"></div>
+          </div>
         </div>
       </section>
     </div>

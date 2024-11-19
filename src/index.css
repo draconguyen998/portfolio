@@ -201,7 +201,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 1px solid lime;
+  border: 2px solid #0047AB;
 }
 
 /* Animation Xoay Ngang */
@@ -266,5 +266,194 @@ section {
   left: 50%; /* Căn giữa theo chiều ngang */
   transform: translate(-50%, -50%); /* Dịch chuyển chính xác vào giữa */
   cursor: pointer; /* Thay đổi con trỏ khi hover */
+  justify-content: center; /* Căn giữa text theo chiều ngang */
+  align-items: center; /* Căn giữa text theo chiều dọc */
+  white-space: nowrap; /* Không cho phép xuống dòng */
+  width: auto; /* Tự động điều chỉnh theo nội dung */
+  overflow: hidden;
+  text-align: center;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 0px; /* Khoảng cách giữa text và mũi tên */
   z-index: 10; /* Đảm bảo nút nằm trên cube */
+}
+
+/* Hiệu ứng hover */
+.our-project:hover {
+  background-color: #0047AB; /* Đổi nền thành màu đen khi hover */
+  color: #ffffff; /* Đổi màu chữ thành xanh khi hover */
+}
+
+.our-project:hover .arrow {
+  opacity: 1; /* Hiện mũi tên */
+  transform: translateX(0); /* Đưa mũi tên về vị trí gốc */
+}
+
+/* Text */
+.project-button span.text {
+  transition: transform 0.5s ease; /* Hiệu ứng dịch chuyển text */
+}
+
+/* Biểu tượng mũi tên */
+.our-project .arrow {
+  display: inline-block;
+  opacity: 0; /* Ẩn mũi tên khi chưa hover */
+  transform: translateX(48px); /* Mũi tên ở ngoài phạm vi nút */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Hiệu ứng mượt */
+  font-size: 16px; /* Cỡ chữ của mũi tên */
+  color: inherit; /* Đồng bộ màu chữ với nút */
+  margin-left: 0; /* Xóa khoảng cách mặc định */
+}
+
+.our-project:hover span.text {
+  transform: translateX(-10px); /* Text dịch về bên trái */
+}
+.our-project:hover .arrow {
+  opacity: 1; /* Hiện mũi tên */
+  transform: translateX(0); /* Mũi tên quay về vị trí gốc */
+}
+
+
+/* Section About */
+.about-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  text-align: center;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.indicator-circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0047AB; 
+  border-radius: 50%;
+  animation: scroll-indicator 1.5s infinite;
+}
+
+.indicator-bar {
+  width: 3px;
+  height: 50px;
+  background: #0047AB; 
+}
+
+@keyframes scroll-indicator {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(-10px);
+  }
+}
+
+.scroll-indicator {
+  width: 40px; /* Kích thước chiều ngang */
+  height: 80px; /* Kích thước chiều dọc */
+  border: 2px solid #0047AB; /* Viền màu xanh neon */
+  border-radius: 50px; /* Bo tròn tạo hình elip */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.scroll-line {
+  width: 4px;
+  height: 4px;
+  background-color: #888; /* Màu xám cho line */
+  border-radius: 50%;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+  background-color: white; /* Màu trắng cho dot */
+  border-radius: 50%;
+  animation: scrollAnimation 1.5s infinite ease-in-out; /* Hiệu ứng di chuyển */
+}
+
+/* Hiệu ứng dot di chuyển */
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+
+.scroll-indicator {
+  width: 40px; /* Chiều ngang của container */
+  height: 100px; /* Chiều dọc của container */
+  border: 2px solid blue; /* Viền màu xanh */
+  border-radius: 50px; /* Bo tròn */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  background: black; /* Màu nền của container */
+}
+
+.scroll-dot {
+  width: 8px; /* Đường kính chấm */
+  height: 8px;
+  background-color: white; /* Màu chấm */
+  border-radius: 50%;
+  animation: scrollAnimation 1.5s infinite ease-in-out;
+}
+
+/* Tạo hiệu ứng di chuyển cho từng chấm */
+.scroll-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.scroll-dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.scroll-dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Keyframes để tạo hiệu ứng chạy từ trên xuống */
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
 }

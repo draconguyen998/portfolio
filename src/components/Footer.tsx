@@ -45,8 +45,8 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>X(Twitter)</li>
               <li>LinkedIn</li>
-              <li>Framer Profile</li>
-              <li>YouTube</li>
+              <li>Facebook</li>
+              <li>Instagram</li>
             </ul>
           </div>
         </div>
