@@ -89,7 +89,7 @@ const Home = () => {
             At DesignCube, we specialize in web design, SEO, UI/UX, branding, and digital marketing. Elevate your brand and transform your digital presence with our innovative design solutions.
           </p>
         </div>
-
+          
         {/* Đoạn văn bản bên phải */}
         <div className="right-text w-1/2 text-right">
           <p>

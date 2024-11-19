@@ -24,6 +24,7 @@ const RotatingCube = () => {
           <img src="/path-to-image4.jpg" alt="Right" className="cube-image" />
         </div>
       </div>
+      <button className="text-lg rounded-lg font-semibold bg-white text-txt_heading px-12 py-3 leading-8 our-project">Our Projects</button>
     </div>
   );
 };

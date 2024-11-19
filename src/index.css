@@ -16,7 +16,7 @@ section {
   width: 36px;
   height: 36px;
   transform-style: preserve-3d;
-  animation: spin 2s linear infinite;
+  animation: spin 4s linear infinite;
   pointer-events: none; /* Không can thiệp vào sự kiện chuột */
 }
 
@@ -84,7 +84,7 @@ section {
 /* Track chạy nội dung */
 .marquee-track {
   display: flex;
-  animation: marquee 20s linear infinite; /* Animation mượt */
+  animation: marquee 30s linear infinite; /* Animation mượt */
   white-space: nowrap; /* Không xuống dòng */
   position: relative;
 }
@@ -258,4 +258,13 @@ section {
   right: 0; /* Căn sát phải */
   /* top: 50px; Tùy chỉnh để đặt vị trí cho khớp dấu đỏ */
   margin-right: 24px;
+}
+
+.our-project {
+  position: absolute; /* Định vị tuyệt đối */
+  top: 100%; /* Căn giữa theo chiều dọc */
+  left: 50%; /* Căn giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Dịch chuyển chính xác vào giữa */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+  z-index: 10; /* Đảm bảo nút nằm trên cube */
 }
