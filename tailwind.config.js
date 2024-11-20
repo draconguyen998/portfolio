@@ -11,6 +11,7 @@ export default {
         primary_dark: "#002E91", //Thêm màu primary_dark
         primary_light: "#4D7EC4", //Thêm màu primary_light
         bg_primary: "#000012", //Thêm màu bg_primary
+        bg_primary_5: '#191929',
         txt_heading: "#1A1A2A", //Thêm màu text-heading
       },
     },
